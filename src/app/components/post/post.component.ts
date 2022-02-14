@@ -16,7 +16,7 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 300);
     this._ativatedRoute.paramMap.subscribe((params) => {
-    this._Http.get(`http://localhost:5000/api/posts/${params.get('id')}`).subscribe(
+    this._Http.get(`https://blog-api-0000.herokuapp.com/api/posts/${params.get('id')}`).subscribe(
         (response: any) => {
           console.log(response);
           this.post = response;

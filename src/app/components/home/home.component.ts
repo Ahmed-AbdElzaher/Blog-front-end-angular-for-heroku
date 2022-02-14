@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       })
     }
 
-    this._Http.get('http://localhost:5000/api/posts/',httpOptions).subscribe(
+    this._Http.get('https://blog-api-0000.herokuapp.com/api/posts/',httpOptions).subscribe(
 
       (response: any) => {
         // alert('response')
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
           'authorization': this._isLogged.token || ""
         })
       }
-      this._Http.delete(`http://localhost:5000/api/posts/${post._id}`,httpOptions).subscribe(
+      this._Http.delete(`https://blog-api-0000.herokuapp.com/api/posts/${post._id}`,httpOptions).subscribe(
         (response: any)=>{
           this.posts.splice(currentIndex)
         },

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     user.password = pass;
     // alert(user);
     console.log(user);
-    this._Http.post("http://localhost:5000/api/auth/login",user).subscribe(
+    this._Http.post("https://blog-api-0000.herokuapp.com/api/auth/login",user).subscribe(
       (response: any) => {
         alert("user logged successfully")
         localStorage.setItem("token", response)

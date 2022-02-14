@@ -20,7 +20,7 @@ export class CreatePostComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 500);
     this._ativatedRoute.paramMap.subscribe((params) => {
-      this._Http.get(`http://localhost:5000/api/posts/${params.get('id')}`).subscribe(
+      this._Http.get(`https://blog-api-0000.herokuapp.com/api/posts/${params.get('id')}`).subscribe(
           (response: any) => {
             // console.log(response);
             this.post = response;
@@ -43,7 +43,7 @@ export class CreatePostComponent implements OnInit {
               'authorization': this._isLogged.token || ""
             })
           }
-    this._Http.post("http://localhost:5000/api/posts/",post,httpOptions).subscribe(
+    this._Http.post("https://blog-api-0000.herokuapp.com/api/posts/",post,httpOptions).subscribe(
       (response: any) => {
         alert("posted successfully")
         window.location.replace('/')
@@ -69,7 +69,7 @@ export class CreatePostComponent implements OnInit {
               'authorization': this._isLogged.token || ""
             })
           }
-    this._Http.put(`http://localhost:5000/api/posts/${this.post._id}`,this.post,httpOptions).subscribe(
+    this._Http.put(`https://blog-api-0000.herokuapp.com/api/posts/${this.post._id}`,this.post,httpOptions).subscribe(
       (response: any) => {
         alert("Updated successfully")
         window.location.replace('/userPosts')

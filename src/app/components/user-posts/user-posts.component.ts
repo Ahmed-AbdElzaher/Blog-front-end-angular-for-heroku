@@ -24,7 +24,7 @@ export class UserPostsComponent implements OnInit {
         'authorization': this._isLogged.token || ""
       })
     }
-    this._Http.get('http://localhost:5000/api/posts/userPosts',httpOptions).subscribe(
+    this._Http.get('https://blog-api-0000.herokuapp.com/api/posts/userPosts',httpOptions).subscribe(
       (response: any) => {
         console.log(response);
         this.posts = response;
@@ -48,7 +48,7 @@ export class UserPostsComponent implements OnInit {
           'authorization': this._isLogged.token || ""
         })
       }
-      this._Http.delete(`http://localhost:5000/api/posts/${post._id}`,httpOptions).subscribe(
+      this._Http.delete(`https://blog-api-0000.herokuapp.com/api/posts/${post._id}`,httpOptions).subscribe(
         (response: any)=>{
           // this.posts.splice(currentIndex)
           window.location.replace('/userPosts')
@@ -71,7 +71,7 @@ export class UserPostsComponent implements OnInit {
           'authorization': this._isLogged.token || ""
         })
       }
-      this._Http.put(`http://localhost:5000/api/posts/${post._id}`,post,httpOptions).subscribe(
+      this._Http.put(`https://blog-api-0000.herokuapp.com/api/posts/${post._id}`,post,httpOptions).subscribe(
         (response: any)=>{
           this.posts.splice(currentIndex)
         },
