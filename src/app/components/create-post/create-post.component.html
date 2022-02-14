@@ -1,0 +1,39 @@
+<div class="container">
+  <form class="row m-5 g-3 needs-validation">
+    <h1 class="text-center" *ngIf="post.title.length == 0">Create Post</h1>
+    <h1 class="text-center" *ngIf="post.title.length != 0">Update Post</h1>
+    <div class="col-lg-6 col-md-12">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" #title value="{{post.title}}" placeholder="required">
+      <br>
+      <label class="form-label">Photo URL</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text">URL</span>
+        <input placeholder="(optional)" type="text" value="{{post.photo}}" #photo class="form-control" aria-describedby="inputGroupPrepend">
+      </div>
+      <br>
+      <label class="form-label">Category</label>
+      <input type="text" class="form-control" #category value="{{post.category}}" placeholder="(optional)">
+    </div>
+    <div class="col-lg-6 col-md-12">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" #description value="{{post.description}}" placeholder="required" id="" cols="30" rows="9"></textarea>
+    </div>
+    <div class="col-12">
+      <input *ngIf="post.title.length == 0" class="btn btn-primary" type="button"
+        (click)="createPost(title.value,description.value,photo.value,category.value)" value="Add Post">
+        <input *ngIf="post.title.length > 0" class="btn btn-primary" type="button"
+        (click)="updatePost(title.value,description.value,photo.value,category.value)" value="Update Post">
+
+    </div>
+  </form>
+</div>
+
+
+<!-- old -->
+<!-- <input type="text" #title placeholder="username"> -->
+<!-- <input type="email" #description placeholder="email"> -->
+<!-- <input type="text" #photo placeholder="photo url"> -->
+<!-- <input type="text" #username placeholder="text"> -->
+<!-- <input type="text" #categories placeholder="text"> -->
+<!-- <input type="button" (click)="createPost(title.value,description.value,photo.value,category.value)" value="AddUser"> -->

@@ -1,0 +1,81 @@
+<div class="container sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-3 fst-italic" href="#">blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!logged" routerLink="/logIn">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!logged" routerLink="/signUp">SIGN UP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="logged" routerLink="/create-post">CREATE POST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="logged" routerLink="/userPosts">YOUR POSTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="logged" (click)="logOut()">LOGOUT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<main class="container">
+  <div class="cover">
+    <img src="../../../assets/img/cover.jpg">
+    <!-- <video src="video.mp4" autoplay="true" loop="true"></video> -->
+    <h2 class="text-center">New Defender V8</h2>
+    <button>Read More</button>
+</div>
+
+  <!-- <div class="p-4 p-md-5 mb-4 text-white rounded header">
+    <div class="col-lg-8 col-md-10 px-0">
+      <h1 class="display-4 fst-italic">Post Title .....</h1>
+      <p class="lead my-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos, porro inventore et explicabo veniam culpa possimus sequi quidem ex vel ut dolores minus error blanditiis debitis aut illum neque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, accusamus harum quae placeat cumque reiciendis sunt ea laboriosam! Maxime commodi magnam officiis est eum eligendi autem debitis eos sequi animi!</p>
+    </div>
+  </div> -->
+
+</main>
+
+
+
+
+<!-- old -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">blog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="logIn">login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="signUp">sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="create-post">create post</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ -->

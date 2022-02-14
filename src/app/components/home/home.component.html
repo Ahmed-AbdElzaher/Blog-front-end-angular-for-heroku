@@ -1,0 +1,20 @@
+<main class="container">
+  <div class="row mb-2 post" *ngFor="let post of posts.reverse();let currentIndex=index">
+    <div class="col-lg-12 col-md-12">
+      <div class="row g-0 border rounded overflow-auto flex-md-row mb-4 shadow-sm  position-relative">
+        <div class="col-6 p-4 d-flex flex-column position-static">
+          <h3 class="mb-2">{{post.title}}</h3>
+          <!-- <div class="mb-1 text-muted">Posted by <a class="fst-italic text-decoration-none">{{post.username}}</a></div> -->
+          <p class="mb-auto">{{post.description}}</p>
+          <a href="" class="stretched-link" routerLink="/post/{{post._id}}"></a>
+          <a href="" class="">{{post.category}}</a>
+        </div>
+        <div class="col-6 d-lg-block" style="height:auto;overflow:hidden;">
+          <img src="{{post.photo}}" style="width:100%;" alt="">
+        </div>
+        <!-- <button *ngIf="logged" class="btn btn-info col-6">Update</button>
+        <button *ngIf="logged" (click)="delete(currentIndex)" class="btn btn-danger col-6">DELETE</button> -->
+      </div>
+    </div>
+  </div>
+</main>
